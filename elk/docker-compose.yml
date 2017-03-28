@@ -1,0 +1,36 @@
+version: '2'
+services:
+  nginx:
+    build: ./nginx
+    image: localhost:5000/nginx-kibana:latest
+    ports:
+      - "8061:80"
+    networks:
+      - elk-net
+  logstash:
+    build: ./logstash
+    image: localhost:5000/logstash-elk:latest
+    ports:
+      - "8062:5000"
+    networks:
+      - elk-net
+  elasticsearch:
+    image: localhost:5000/elasticsearch:5.2.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    mem_limit: 3221225472
+    networks:
+      - elk-net
+  kibana:
+    image: localhost:5000/kibana:5.2.2
+    ports:
+      - "8065:5601"
+    networks:
+      - elk-net
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+networks:
+  elk-net:
+    driver: bridge
+  
