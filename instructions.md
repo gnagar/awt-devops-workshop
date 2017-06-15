@@ -45,11 +45,26 @@ fi
 # set PATH so it includes user's private bin directories
 PATH="$HOME/Downloads/jre1.8.0_131/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 ```
+Log-off and re-login. Open a new terminal and run `java -version`. It should echo the version of java.
+
+```shell
+java version "1.8.0_131"
+Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
+```
 
 ### Install Jenkins on the VM
 
 - Download Jenkins war file in the VM and save it to `/home/appworks/Downloads/`. The LTS version can be found here: http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-- On the same terminal whereStart Jenkins from the terminal by issuing the following command `/home/appworks/Downloads/`
+- Start Jenkins from the terminal by
+
+```shell
+cd /home/appworks/Downloads/
+java -jar jenkins.war
+```
+- During the initial start, Jenkins will output a password, copy this and open `http://localhost:8080` in the browser. Paste the copied password in the provided screen. Accept all defaults and choose to install recommended plugins.
+- Once the installation completes, Jenkins will ask for an admin user. Provide the details for the user you want to use as admin and click on save.
+- Jenkins is now configured and can be re-started with the above command
 
 ### Run the following command on terminal - this is required for ELK stack to run properly
 
