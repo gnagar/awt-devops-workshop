@@ -1,6 +1,12 @@
-## Commands for the workshop
+## Instructions for the refresher workshop
 
-We will use the Lubuntu VM we had used earlier in the session
+We will use the same Lubuntu VM we had used earlier in the session - the following instructions assume that you have that setup on your individual machines.
+
+### Boot up the VM
+
+- Open VirtualBox (do not upgrade when and if prompted)
+- Double click on the workshop VM listed on the left panel
+- Follow the below instructions
 
 ### Install jre 8 on the VM
 
