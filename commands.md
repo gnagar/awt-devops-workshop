@@ -30,6 +30,15 @@ docker-compose up -d
 
 Import the dashboard temples from grafana directory
 - From the Grafana menu, choose Dashboards and click on Import
+- Import and examine various dashboards in grafana directory
+
+### Add Jenkins monitoring
+
+Demonstration of how to add a new server
+- Install prometheus plugin in Jenkins
+- Configure prometheus to connect with the Jenkins server
+- View the server stats in dashboards
+- Create alerts
 
 ### Ports usage
 
