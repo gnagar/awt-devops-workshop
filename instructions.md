@@ -65,15 +65,20 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
 ### Install Jenkins on the VM
 
 - Download Jenkins war file in the VM and save it to `/home/appworks/Downloads/`. The LTS version can be found here: http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-- Start Jenkins from the terminal
+- Start Jenkins from the terminal as su
 
 ```shell
+sudo su
 cd /home/appworks/Downloads/
 java -jar jenkins.war
 ```
 - During the initial start, Jenkins will output a password on the terminal, copy this and open `http://localhost:8080` in the browser. Paste the copied password in the provided screen. Accept all defaults and choose to install recommended plugins
 - Once the installation completes, Jenkins will ask for an admin user. Provide the details for the user you want to use as admin and click on save
-- Jenkins is now configured and can be re-started with the above command. If you want to start Jenkins in the backgroud, use this command `nohup java -jar jenkins.war &`
+- Jenkins is now configured and can be re-started with the above command. If you want to start Jenkins in the backgroud, use this command:
+```shell
+sudo su
+nohup java -jar jenkins.war &
+```
 
 ### Run the following command on terminal - this is required for ELK stack to run properly
 
