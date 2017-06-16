@@ -1,13 +1,16 @@
-### Run cAdvisor
+### Run monitoring stack
 
 ```shell
-docker run \
-  -v /:/rootfs:ro \
-  -v /var/run:/var/run:rw \
-  -v /sys:/sys:ro \
-  -v /var/lib/docker/:/var/lib/docker:ro \
-  -p 8010:8080 \
-  -d \
-  --name=cadvisor \
-  localhost:5000/google/cadvisor:latest
+cd /home/appworks/Documents/awt-devops-workshop
+git pull
+cd monitoring
+docker-compose up -d
 ```
+
+### Ports usage
+
+8080: Jenkins on localhost
+5000: Docker registery on Docker
+3000: Grafana on Docker via monitoring stack
+9093: Alert manager on Docker via monitoring stack
+9090: Prometheus on Docker via monitoring stack
