@@ -35,17 +35,3 @@ scrape_configs:
       - targets: ['localhost:9090']
         labels:
          aw_server_name: ci-server-prometheus
-
-  - job_name: 'awm4lnodeexporter'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['ec2-35-154-28-253.ap-south-1.compute.amazonaws.com:9100']
-        labels:
-         aw_server_name: awm4l
-
-  - job_name: 'gkdevasnodeexporter'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['ec2-35-154-19-183.ap-south-1.compute.amazonaws.com:9100']
-        labels:
-         aw_server_name: gkdev
