@@ -62,3 +62,7 @@ Demonstration of how to add a new server
   localhost:5000/sonarqube:6.2-alpine
 ```
 - Install SonarQube scanner plugin in Jenkins
+- Go to Manage jenkins > Configure system
+- Add a new SonarQube server
+  - Name: SonarQube
+  - URL: http://localhost:9000
