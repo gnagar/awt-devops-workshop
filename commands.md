@@ -18,6 +18,18 @@ git pull
 cd monitoring
 docker-compose up -d
 ```
+- Access http://localhost:3000 to open Grafana's UI
+- Use credentials `appworks/appworks` to login
+- Click 'Add data source'
+- Add prometheus as data source
+  - Name: Prometheus
+  - Type: Prometheus
+  - URL: <What should it be? `http://localhost:9090`?>
+  - Access: Proxy
+- Save and test, grafana should be able to connect to prometheus
+
+Import the dashboard temples from grafana directory
+- From the Grafana menu, choose Dashboards and click on Import
 
 ### Ports usage
 
