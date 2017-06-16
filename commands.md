@@ -66,3 +66,6 @@ Demonstration of how to add a new server
 - Add a new SonarQube server
   - Name: SonarQube
   - URL: http://localhost:9000
+- Install SonarQube Quality Gate plugin in Jenkins
+  - Name: SonarQube Quality gate
+  - URL: http://localhost:9000
