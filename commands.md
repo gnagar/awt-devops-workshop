@@ -35,7 +35,7 @@ Import the dashboard temples from grafana directory
 ### Add Jenkins monitoring
 
 Demonstration of how to add a new server
-- Install prometheus plugin in Jenkins
+- Install prometheus plugin in Jenkins (external Jenkins - reachable from container)
 - Configure prometheus to connect with the Jenkins server
 - View the server stats in dashboards
 - Create alerts
@@ -47,3 +47,13 @@ Demonstration of how to add a new server
 - 3000: Grafana on Docker via monitoring stack
 - 9093: Alert manager on Docker via monitoring stack
 - 9090: Prometheus on Docker via monitoring stack
+
+### 
+```shell
+  docker run \
+  -d \
+  --name sonarqube \
+  -p 9000:9000 \
+  -p 9092:9092 \
+  localhost:5000/sonarqube:6.2-alpine
+```
