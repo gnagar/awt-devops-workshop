@@ -45,6 +45,15 @@ fi
 # set PATH so it includes user's private bin directories
 PATH="$HOME/Downloads/jre1.8.0_131/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 ```
+
+Set PATH variable for root `.profile` to include Java binary in the terminal
+
+```shell
+sudo su
+vi ~/.profile
+PATH="/home/appworks/Downloads/jre1.8.0_131/bin:$PATH"
+```
+
 Log-off and re-login. Open a new terminal and run `java -version`. It should echo the version of java.
 
 ```shell
