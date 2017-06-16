@@ -36,13 +36,6 @@ scrape_configs:
         labels:
          aw_server_name: ci-server-prometheus
 
-  - job_name: 'awm4largecontainers'
-    scrape_interval: 10s
-    static_configs:
-      - targets: ['ec2-35-154-28-253.ap-south-1.compute.amazonaws.com:8080']
-        labels:
-         aw_server_name: awm4l-containers
-
   - job_name: 'awm4lnodeexporter'
     scrape_interval: 5s
     static_configs:
@@ -56,20 +49,3 @@ scrape_configs:
       - targets: ['ec2-35-154-19-183.ap-south-1.compute.amazonaws.com:9100']
         labels:
          aw_server_name: gkdev
-
-  - job_name: 'gkprdasnodeexporter'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['ec2-52-66-141-102.ap-south-1.compute.amazonaws.com:9100']
-        labels:
-         aw_server_name: gkprd
-
-#  - job_name: 'nginx'
-#    scrape_interval: 10s
-#    static_configs:
-#      - targets: ['nginxexporter:9113']
-
-#  - job_name: 'aspnetcore'
-#    scrape_interval: 10s
-#    static_configs:
-#      - targets: ['eventlog-proxy:5000', 'eventlog:5000']
