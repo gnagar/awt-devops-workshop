@@ -1,3 +1,15 @@
+### Run registry (should already be running in the VM)
+
+```shell
+docker run \
+  -d \
+  -p 5000:5000 \
+  --restart always \
+  -v /home/appworks/Documents/docker-registry/data:/var/lib/registry:rw
+  --name registry \
+  registry:2.6
+```
+
 ### Run monitoring stack
 
 ```shell
