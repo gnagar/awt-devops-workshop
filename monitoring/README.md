@@ -7,8 +7,8 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 
 Clone this repository on your Docker host, cd into dockprom directory and run compose up:
 
-* `$ git clone https://github.com/stefanprodan/dockprom` 
-* `$ cd dockprom`
+* `$ git clone https://github.com/gnagar/awt-devops-workshop` 
+* `$ cd monitoring`
 * `$ docker-compose up -d`
 
 Containers:
@@ -25,7 +25,7 @@ You can remove the ports mapping from the docker-compose file and use NGINX as a
 ## Setup Grafana
 
 Navigate to `http://<host-ip>:3000` and login with user ***admin*** password ***changeme***. You can change the password from Grafana UI or 
- by modifying the [user.config](https://git.awtech.in/devops/awt-devops-workshop/blob/master/monitoring/user.config) file.
+ by modifying the [user.config](https://github.com/gnagar/awt-devops-workshop/blob/master/monitoring/user.config) file.
 
 From the Grafana menu, choose ***Data Sources*** and click on ***Add Data Source***. 
 Use the following values to add the Prometheus container as data source:
@@ -35,12 +35,12 @@ Use the following values to add the Prometheus container as data source:
 * Url: http://prometheus:9090
 * Access: proxy
 
-Now you can import the dashboard temples from the [grafana](https://git.awtech.in/devops/awt-devops-workshop/tree/master/monitoring/grafana) directory. 
+Now you can import the dashboard temples from the [grafana](https://github.com/gnagar/awt-devops-workshop/tree/master/monitoring/grafana) directory. 
 From the Grafana menu, choose ***Dashboards*** and click on ***Import***.
 
 ***Docker Host Dashboard***
 
-![Host](https://git.awtech.in/devops/awt-devops-workshop/raw/master/monitoring/screens/Grafana_Docker_Host.png)
+![Host](https://github.com/gnagar/awt-devops-workshop/raw/master/monitoring/screens/Grafana_Docker_Host.png)
 
 The Docker Host Dashboard shows key metrics for monitoring the resource usage of your server:
 
@@ -54,7 +54,7 @@ The Docker Host Dashboard shows key metrics for monitoring the resource usage of
 
 ***Docker Containers Dashboard***
 
-![Containers](https://git.awtech.in/devops/awt-devops-workshop/raw/master/monitoring/screens/Grafana_Docker_Containers.png)
+![Containers](https://github.com/gnagar/awt-devops-workshop/raw/master/monitoring/screens/Grafana_Docker_Containers.png)
 
 The Docker Containers Dashboard shows key metrics for monitoring running containers:
 
@@ -70,7 +70,7 @@ Note that this dashboard doesn't show the containers that are part of the monito
 
 ***Monitor Services Dashboard***
 
-![Monitor Services](https://git.awtech.in/devops/awt-devops-workshop/raw/master/monitoring/screens/Grafana_Prometheus.png)
+![Monitor Services](https://github.com/gnagar/awt-devops-workshop/raw/master/monitoring/screens/Grafana_Prometheus.png)
 
 The Monitor Services Dashboard shows key metrics for monitoring the containers that make up the monitoring stack:
 
@@ -84,16 +84,16 @@ The Monitor Services Dashboard shows key metrics for monitoring the containers t
 * Prometheus alerts graph
 
 Prometheus memory usage can be controlled by adjusting the local storage memory chunks.
-You can modify the max chunks value in [docker-compose.yml](https://git.awtech.in/devops/awt-devops-workshop/blob/master/monitoring/docker-compose.yml). 
+You can modify the max chunks value in [docker-compose.yml](https://github.com/gnagar/awt-devops-workshop/blob/master/monitoring/docker-compose.yml). 
 I've set the `storage.local.memory-chunks` value to 100000, if you monitor 10 containers, then Prometheus will use around 1GB of RAM.
 
 ## Define alerts
 
 I've setup three alerts configuration files:
 
-* Monitoring services alerts [targets.rules](https://git.awtech.in/devops/awt-devops-workshop/blob/master/monitoring/prometheus/targets.rules)
-* Docker Host alerts [hosts.rules](https://git.awtech.in/devops/awt-devops-workshop/blob/master/monitoring/prometheus/hosts.rules)
-* Docker Containers alerts [containers.rules](https://git.awtech.in/devops/awt-devops-workshop/blob/master/monitoring/prometheus/containers.rules)
+* Monitoring services alerts [targets.rules](https://github.com/gnagar/awt-devops-workshop/blob/master/monitoring/prometheus/targets.rules)
+* Docker Host alerts [hosts.rules](https://github.com/gnagar/awt-devops-workshop/blob/master/monitoring/prometheus/hosts.rules)
+* Docker Containers alerts [containers.rules](https://github.com/gnagar/awt-devops-workshop/blob/master/monitoring/prometheus/containers.rules)
 
 You can modify the alert rules and reload them by making a HTTP POST call to Prometheus:
 
@@ -208,7 +208,7 @@ A complete list of integrations can be found [here](https://prometheus.io/docs/a
 
 You can view and silence notifications by accessing `http://<host-ip>:9093`.
 
-The notification receivers can be configured in [alertmanager/config.yml](https://git.awtech.in/devops/awt-devops-workshop/blob/master/monitoring/alertmanager/config.yml) file.
+The notification receivers can be configured in [alertmanager/config.yml](https://github.com/gnagar/awt-devops-workshop/blob/master/monitoring/alertmanager/config.yml) file.
 
 To receive alerts via Slack you need to make a custom integration by choose ***incoming web hooks*** in your Slack team app page. 
 You can find more details on setting up Slack integration [here](http://www.robustperception.io/using-slack-with-the-alertmanager/).
@@ -229,4 +229,4 @@ receivers:
             api_url: 'https://hooks.slack.com/services/<webhook-id>'
 ```
 
-![Slack Notifications](https://git.awtech.in/devops/awt-devops-workshop/raw/master/monitoring/screens/Slack_Notifications.png)
+![Slack Notifications](https://github.com/gnagar/awt-devops-workshop/raw/master/monitoring/screens/Slack_Notifications.png)
