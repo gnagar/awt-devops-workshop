@@ -19,19 +19,20 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['nodeexporter:9100']
-        labels:
-         aw_server_name: ci 
-
+        
   - job_name: 'cadvisor'
     scrape_interval: 5s
     static_configs:
       - targets: ['cadvisor:8080']
-        labels:
-         aw_server_name: ci-server-containers
-
+        
   - job_name: 'prometheus'
     scrape_interval: 10s
     static_configs:
       - targets: ['localhost:9090']
-        labels:
-         aw_server_name: ci-server-prometheus
+
+  - job_name: 'jenkins'
+    scrape_interval: 10s
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['dev.glue.ky:8080']
+      
