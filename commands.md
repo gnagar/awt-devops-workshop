@@ -48,7 +48,8 @@ Demonstration of how to add a new server
 - 9093: Alert manager on Docker via monitoring stack
 - 9090: Prometheus on Docker via monitoring stack
 
-### 
+### Sonarqube
+
 ```shell
   docker run \
   -d \
