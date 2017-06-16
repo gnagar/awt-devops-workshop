@@ -47,9 +47,12 @@ Demonstration of how to add a new server
 - 3000: Grafana on Docker via monitoring stack
 - 9093: Alert manager on Docker via monitoring stack
 - 9090: Prometheus on Docker via monitoring stack
+- 9000: Sonarqube server URL on Docker
+- 9092: Sonar scanner port on Docker
 
 ### Sonarqube
 
+- Start SonarQube
 ```shell
   docker run \
   -d \
@@ -58,3 +61,4 @@ Demonstration of how to add a new server
   -p 9092:9092 \
   localhost:5000/sonarqube:6.2-alpine
 ```
+- Install SonarQube scanner plugin in Jenkins
