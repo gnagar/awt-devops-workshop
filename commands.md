@@ -40,16 +40,6 @@ Demonstration of how to add a new server
 - View the server stats in dashboards
 - Create alerts
 
-### Ports usage
-
-- 8080: Jenkins on localhost
-- 5000: Docker registery on Docker
-- 3000: Grafana on Docker via monitoring stack
-- 9093: Alert manager on Docker via monitoring stack
-- 9090: Prometheus on Docker via monitoring stack
-- 9000: Sonarqube server URL on Docker
-- 9092: Sonar scanner port on Docker
-
 ### Sonarqube
 
 - Start SonarQube
@@ -69,3 +59,34 @@ Demonstration of how to add a new server
 - Install SonarQube Quality Gate plugin in Jenkins
   - Name: SonarQube Quality gate
   - URL: http://localhost:9000
+
+
+### ELK
+
+Check the max map count using `sysctl vm.max_map_count`. If it is less than `262144`, run this command `sudo sysctl -w vm.max_map_count=262144`
+
+Send arbitrary logs to logstash
+```shell
+echo Hello World! | nc 192.168.99.101 8062
+```
+
+Use this resource to auto-detect logstash patterns [grokdebug.herokuapp.com](https://grokdebug.herokuapp.com/discover)
+
+### Sample node project with tests
+
+(node-sample on Github)[https://github.com/gnagar/node-sample]
+
+### Ports usage
+
+- 8080: Jenkins on localhost
+- 5000: Docker registery on Docker
+- 3000: Grafana on Docker via monitoring stack
+- 9093: Alert manager on Docker via monitoring stack
+- 9090: Prometheus on Docker via monitoring stack
+- 9000: Sonarqube server URL on Docker
+- 9092: Sonar scanner port on Docker
+- 8065: Kibana on Docker
+- 8062: Logstash on Docker
+- 9200: Elasticsearch on Docker
+- 9300: Elasticsearch on Docker
+- 8061: Nginx on Docker
