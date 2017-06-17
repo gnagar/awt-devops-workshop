@@ -72,6 +72,8 @@ echo Hello World! | nc 192.168.99.101 8062
 
 Use this resource to auto-detect logstash patterns [grokdebug.herokuapp.com](https://grokdebug.herokuapp.com/discover)
 
+e.g. `14:14:21.363 INFO  an exception hapened at 2017-06-10T14:20:52.938Z`
+
 ### Sample node project with tests
 
 [node-sample on Github](https://github.com/gnagar/node-sample)
@@ -80,13 +82,14 @@ Use this resource to auto-detect logstash patterns [grokdebug.herokuapp.com](htt
 
 - 8080: Jenkins on localhost
 - 5000: Docker registery on Docker
-- 3000: Grafana on Docker via monitoring stack
-- 9093: Alert manager on Docker via monitoring stack
-- 9090: Prometheus on Docker via monitoring stack
-- 9000: Sonarqube server URL on Docker
-- 9092: Sonar scanner port on Docker
-- 8065: Kibana on Docker
-- 8062: Logstash on Docker
-- 9200: Elasticsearch on Docker
-- 9300: Elasticsearch on Docker
-- 8061: Nginx on Docker
+- 3000: Grafana on Docker from monitoring stack
+- 9093: Alert manager on Docker from monitoring stack
+- 9090: Prometheus on Docker from monitoring stack
+- 9000: SonarQube server URL on Docker
+- 9092: SonarQube scanner port on Docker
+- 8065: Kibana on Docker from ELK stack
+- 8062: Logstash on Docker from ELK stack
+- 9200: Elasticsearch on Docker from ELK stack
+- 9300: Elasticsearch on Docker from ELK stack
+- 8061: Nginx on Docker from ELK stack
+
