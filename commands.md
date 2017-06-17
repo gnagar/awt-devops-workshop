@@ -59,7 +59,15 @@ Demonstration of how to add a new server
 - Install SonarQube Quality Gate plugin in Jenkins
   - Name: SonarQube Quality gate
   - URL: http://localhost:9000
-- `sed -i.bak 's@^SF:/app/@SF:@' coverage/lcov.info`
+
+### Job configuration
+- Git repo: https://github.com/gnagar/node-sample.git
+- Execute shell commands
+  - docker-compose -f docker-compose-test.yml up
+  - `sed -i.bak 's@^SF:/app/@SF:@' coverage/lcov.info`
+  - Sonar scanner configuration
+  - docker-compose build
+  - docker-compose push
 
 ### ELK
 
