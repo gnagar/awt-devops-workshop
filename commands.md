@@ -74,7 +74,7 @@ Use this resource to auto-detect logstash patterns [grokdebug.herokuapp.com](htt
 
 ### Sample node project with tests
 
-(node-sample on Github)[https://github.com/gnagar/node-sample]
+[node-sample on Github](https://github.com/gnagar/node-sample)
 
 ### Ports usage
 
