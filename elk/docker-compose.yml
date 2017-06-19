@@ -1,12 +1,5 @@
 version: '2'
 services:
-  nginx:
-    build: ./nginx
-    image: localhost:5000/nginx-kibana:latest
-    ports:
-      - "8061:80"
-    networks:
-      - elk-net
   logstash:
     build: ./logstash
     image: localhost:5000/logstash-elk:latest
