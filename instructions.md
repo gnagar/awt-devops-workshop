@@ -1,6 +1,12 @@
-## Instructions for the refresher workshop
+# Instructions for the refresher workshop
 
 We will use the same Lubuntu VM we had used earlier in the session - the following instructions assume that you have that setup on your individual machines.
+
+## Without local registry setup
+
+The local repository setup is required if docker hub/elastic repository access is controlled/denied or if there is no internet connection. The idea is to be able to run the whole workshop even without internet (internet connectivity is a big issue in DevOps events and financial organisations where internet is extremely slow or access is tightly controlled).
+
+All images in the local repository setup in the first session are available online on Docker hub or Elastic's Docker repositories. I have created a separate docker compose file with a `*-hub` suffix which references these repositories directly. Make use of this file instead of setting up local repository on the VM (give the file reference when ou run docker-compose command like so: `docker-compose -f docker-compose-hub.yml up -d`).
 
 ### Boot up the VM
 
