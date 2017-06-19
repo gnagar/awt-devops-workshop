@@ -1,0 +1,28 @@
+version: '2'
+services:
+  logstash:
+    build: ./logstash
+    image: docker.elastic.co/logstash/logstash:5.4.1
+    ports:
+      - "8062:5000"
+    networks:
+      - elk-net
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    mem_limit: 3221225472
+    networks:
+      - elk-net
+  kibana:
+    image: docker.elastic.co/elasticsearch/kibana:5.4.1
+    ports:
+      - "8065:5601"
+    networks:
+      - elk-net
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+networks:
+  elk-net:
+    driver: bridge
